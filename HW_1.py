@@ -6,6 +6,7 @@ request_id = 1
 
 
 def generate_request():
+
     global request_id
     request = f"Заявка №{request_id}"
     request_queue.put(request)
@@ -14,6 +15,7 @@ def generate_request():
 
 
 def process_request():
+
     if not request_queue.empty():
         request = request_queue.get()
         print(f"Завершено {request}")
@@ -21,6 +23,7 @@ def process_request():
         print("[!] Черга пуста")
 
 def main():
+    
     while True:
         print("\nМеню:")
         print("1. Створити нову заявку")
